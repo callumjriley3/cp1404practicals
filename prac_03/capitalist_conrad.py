@@ -18,7 +18,7 @@ OUTPUT_FILE = "stock_price_simulation.txt"
 
 number_of_days = 1
 price = INITIAL_PRICE
-print(f"$Starting price: {price:,.2f}")
+print(f"Starting price: ${price:,.2f}")
 
 out_file = open(OUTPUT_FILE, "w")
 
