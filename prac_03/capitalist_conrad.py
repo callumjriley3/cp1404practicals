@@ -18,9 +18,10 @@ OUTPUT_FILE = "stock_price_simulation.txt"
 
 number_of_days = 1
 price = INITIAL_PRICE
-print(f"Starting price: ${price:,.2f}")
 
 out_file = open(OUTPUT_FILE, "w")
+print(f"Starting price: ${price:,.2f}", file=out_file)
+
 
 while MIN_PRICE <= price <= MAX_PRICE:
     price_change = 0
