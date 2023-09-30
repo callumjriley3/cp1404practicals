@@ -13,7 +13,17 @@ Demonstrate multiple instances of reading and writing to files.
 
 # 2.
 # FILENAME = "name.txt"  # Constant defined again "as if it were a separate program."
-# out_file = open(FILENAME, "r")
-# for line in out_file:
+#
+# in_file = open(FILENAME, "r")
+# for line in in_file:
 #     print(f"Your name is {line}")
-# out_file.close()
+# in_file.close()
+
+# 3.
+FILENAME = "numbers.txt"
+
+in_file = open(FILENAME, "r")
+value_one = int(in_file.readline())
+value_two = int(in_file.readline())
+in_file.close()
+print(f"The sum of these two digits is: {value_one + value_two}")
