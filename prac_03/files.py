@@ -28,7 +28,7 @@ value_two = int(in_file.readline())
 in_file.close()
 print(f"The sum of these two digits is: {value_one + value_two}")
 
-# 4.
+# 4.1
 FILENAME = "numbers.txt"
 
 total = 0
