@@ -32,7 +32,7 @@ def get_data():
 def display_data_details(data):
     """Print data formatted like: {subject} is taught by {lecturer} and has {number of students} students."""
     for i in range(len(data)):
-        print(f"{data[i][0]} is taught by {data[i][1]} and has {data[i][2]} students")
+        print(f"{data[i][0]:6} is taught by {data[i][1]:12} and has {data[i][2]:3} students")
 
 
 main()
