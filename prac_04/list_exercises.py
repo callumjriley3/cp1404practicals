@@ -3,10 +3,7 @@
 
 def main():
     """Get input for 5 numbers and store them in a list to print the first, last, min, max, and average."""
-    numbers = []
-    for i in range(5):
-        number = float(input("Number: "))
-        numbers.append(number)
+    numbers = get_numbers()
     print(f"The first number is {numbers[0]}")
     print(f"The last number is {numbers[-1]}")
     print(f"The smallest number is {min(numbers)}")
@@ -19,6 +16,15 @@ def main():
     username = get_username()
     access_status = determine_status(username, usernames)
     print(f"Access {access_status}")
+
+
+def get_numbers():
+    """Return list of numbers obtained from user"""
+    numbers = []
+    for i in range(5):
+        number = float(input("Number: "))
+        numbers.append(number)
+    return numbers
 
 
 def get_username():
