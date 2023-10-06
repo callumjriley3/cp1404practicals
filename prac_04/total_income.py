@@ -1,6 +1,6 @@
 """
 CP1404/CP5632 Practical
-Starter code for cumulative total income program
+Code for cumulative total income program
 """
 
 
@@ -23,7 +23,7 @@ def print_report(incomes, number_of_months, total):
     for month in range(number_of_months):
         income = incomes[month]
         total += income
-        print("Month {:2} - Income: ${:10.2f} Total: ${:10.2f}".format(month, income, total))
+        print("Month {:2} - Income: ${:10.2f}         Total: ${:10.2f}".format(month, income, total))
 
 
 main()
