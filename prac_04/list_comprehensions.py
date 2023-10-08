@@ -39,6 +39,7 @@ print(type(all_numbers[0]))  # check that an element inside numbers is an intege
 greater_numbers = [number for number in all_numbers if number > 9]
 print(greater_numbers)
 
-# TODO: (more advanced) use a list comprehension and the join string method
-# to create a string (not list) of the last names for those full names longer than 11 characters
 # the result should be: 'Harlem, Hendrix, Lovelace'
+long_name_surnames = [full_name.split()[1] for full_name in full_names if len(full_name) > 11]
+surname_string = ", ".join(long_name_surnames)
+print(surname_string)
