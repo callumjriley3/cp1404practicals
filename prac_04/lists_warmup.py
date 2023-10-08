@@ -14,14 +14,14 @@ False
 """
 
 # 1.
-# numbers[0] = "ten"
+numbers[0] = "ten"
 
 # 2.
-# numbers[-1] = 1
-# print(numbers[-1])
+numbers[-1] = 1
+print(numbers[-1])
 
 # 3.
-# print(numbers[2:])
+print(numbers[2:])
 
 # 4.
-# print(9 in numbers)
+print(9 in numbers)
