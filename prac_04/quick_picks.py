@@ -18,7 +18,7 @@ def main():
                 random_number = generate_random_number(LOWER_LIMIT, UPPER_LIMIT)
             random_numbers.append(random_number)
             random_numbers.sort()
-        print(random_numbers)
+        print(" ".join(f"{random_number:2}" for random_number in random_numbers))
 
 
 def get_valid_number_of_picks():
