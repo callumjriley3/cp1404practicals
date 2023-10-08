@@ -11,8 +11,14 @@ NUMBER_OF_NUMBERS = 6
 def main():
     number_of_picks = get_valid_number_of_picks()
     for i in range(number_of_picks):
+        random_numbers = []
         for j in range(NUMBER_OF_NUMBERS):
-            print(generate_random_number(LOWER_LIMIT, UPPER_LIMIT))
+            random_number = generate_random_number(LOWER_LIMIT, UPPER_LIMIT)
+            while random_number in random_numbers:
+                random_number = generate_random_number(LOWER_LIMIT, UPPER_LIMIT)
+            random_numbers.append(random_number)
+            random_numbers.sort()
+        print(random_numbers)
 
 
 def get_valid_number_of_picks():
