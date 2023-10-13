@@ -11,11 +11,10 @@ print(CODE_TO_NAME)
 for pair in CODE_TO_NAME.items():
     print(f"{pair[0]:{MAX_SHORT_STATE_LENGTH}} is {pair[1]}")
 
-
 state_code = input("Enter short state: ").upper()
 while state_code != "":
-    if state_code in CODE_TO_NAME:
+    try:
         print(f"{state_code} is {CODE_TO_NAME[state_code]}")
-    else:
+    except KeyError:
         print("Invalid short state")
     state_code = input("Enter short state: ").upper()
