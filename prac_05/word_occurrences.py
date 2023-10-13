@@ -1,7 +1,7 @@
 """
 Word Occurrences
 Estimate: 30 minutes
-Actual:
+Actual: 18 minutes
 """
 
 max_word_length = 0
@@ -14,4 +14,3 @@ for word in text.split():
 
 for word in sorted(list(word_to_count)):
     print(f"{word:{max_word_length}} : {word_to_count[word]}")
-
