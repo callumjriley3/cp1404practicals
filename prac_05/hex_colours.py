@@ -1,5 +1,5 @@
 """
-Program to display hexadecimal code for a colour.
+Display hexadecimal code for a colour.
 """
 
 COLOUR_TO_CODE = {"aliceblue": "#f0f8ff", "barnred": "#7c0a02", "cornflowerblue": "#6495ed", "daffodil": "#ffff31",
