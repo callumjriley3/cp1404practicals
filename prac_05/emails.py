@@ -15,6 +15,9 @@ def main():
             full_name = input("Name: ")
         email_to_name[email] = full_name
         email = input("Email: ")
+    print()
+    for pair in email_to_name.items():
+        print(f"{pair[1]} ({pair[0]})")
 
 
 def extract_name(email):
