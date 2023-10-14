@@ -9,15 +9,16 @@ def main():
     email_to_name = {}
     user_email = input("Email: ")
     while user_email != "":
-        name = extract_name(user_email)
-        print(name)
+        full_name = extract_name(user_email)
+        selection = input(f"Is your name {full_name}? (Y/n) ")
         user_email = input("Email: ")
 
 
 def extract_name(user_email):
     parts = user_email.split("@")
-    name = parts[0].split(".")
-    return name
+    names = parts[0].split(".")
+    full_name = " ".join(names).title()
+    return full_name
 
 
 main()
