@@ -13,7 +13,11 @@ def main():
     with open(FILENAME, "r", encoding="utf-8-sig") as in_file:
         for line in in_file:
             data = line.split(",")
-            countries.add(data[1])
-    print(countries)
+            if data[1] != "Country":
+                countries.add(data[1])
+
+    print("These 12 countries have won Wimbledon:")
+    print(", ".join(sorted(countries)))
+
 
 main()
