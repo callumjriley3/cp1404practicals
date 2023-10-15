@@ -8,7 +8,7 @@ FILENAME = "wimbledon.csv"
 
 
 def main():
-    """Process data from file and display champions, number of wins and winning countries."""
+    """Display relevant data processed from file."""
     champion_to_number_of_wins = {}
     countries = set()
     with open(FILENAME, "r", encoding="utf-8-sig") as in_file:

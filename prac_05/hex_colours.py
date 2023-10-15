@@ -10,8 +10,6 @@ colour = input("Enter colour name (without spaces): ").lower()
 while colour != "":
     try:
         print(f"The hexadecimal code for {colour} is: {COLOUR_TO_CODE[colour]}")
-        colour = input("Enter colour name (without spaces): ").lower()
-
     except KeyError:
         print("Invalid input.")
-        colour = input("Enter colour name (without spaces): ").lower()
+    colour = input("Enter colour name (without spaces): ").lower()
