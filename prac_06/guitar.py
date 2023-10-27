@@ -22,5 +22,5 @@ class Guitar:
         age = 2022 - self.year  # using year specified in exercise
         return age
 
-    def is_vintage(self, age):
-        return age >= 50
+    def is_vintage(self):
+        return 2022 - self.year >= 50
