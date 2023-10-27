@@ -1,7 +1,7 @@
 """
 Guitar class
 Estimated: 20 minutes
-Actual:
+Actual: 23 minutes
 """
 
 
