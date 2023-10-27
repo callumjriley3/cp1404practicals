@@ -4,6 +4,7 @@ Estimated: 20 minutes
 Actual:
 """
 
+
 class Guitar:
     """Represent a Guitar object."""
 
