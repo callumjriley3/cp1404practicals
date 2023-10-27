@@ -16,3 +16,10 @@ class Guitar:
     def __str__(self):
         """Return string according to format."""
         return f"{self.name} ({self.year}) : ${self.cost}"
+
+    def get_age(self):
+        age = 2023 - self.year
+        return age
+
+    def is_vintage(self, age):
+        return age >= 50
