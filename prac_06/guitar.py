@@ -19,7 +19,7 @@ class Guitar:
         return f"{self.name} ({self.year}) : ${self.cost}"
 
     def get_age(self):
-        age = 2023 - self.year
+        age = 2022 - self.year  # using year specified in exercise
         return age
 
     def is_vintage(self, age):
