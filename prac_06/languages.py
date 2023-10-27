@@ -1,7 +1,7 @@
 """
 Languages
 Estimated: 30 minutes
-Actual:
+Actual: 24 minutes
 """
 
 from prac_06.programming_language import ProgrammingLanguage
@@ -15,4 +15,8 @@ programming_languages = [ProgrammingLanguage("Python", "Dynamic", True, 1991),
                          ProgrammingLanguage("Ruby", "Dynamic", True, 1995),
                          ProgrammingLanguage("Visual Basic", "Static", False, 1991)]
 
-
+print("The dynamically typed languages are:")
+dynamic_languages = [programming_language.name for programming_language in programming_languages
+                     if programming_language.is_dynamic()]
+for i in range(len(dynamic_languages)):
+    print(dynamic_languages[i])
