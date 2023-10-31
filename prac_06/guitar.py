@@ -19,8 +19,10 @@ class Guitar:
         return f"{self.name} ({self.year}) : ${self.cost}"
 
     def get_age(self):
+        """Calculate the guitar's age given the 'current' year (according to exercise)"""
         age = 2022 - self.year  # using year specified in exercise
         return age
 
     def is_vintage(self):
+        """Return boolean depending on whether the guitar is 50 years or older"""
         return 2022 - self.year >= 50
