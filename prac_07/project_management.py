@@ -31,7 +31,8 @@ def main():
             projects = process_file(new_filename, NAME_INDEX, START_DATE_INDEX, PRIORITY_INDEX, COST_ESTIMATE_INDEX,
                                     COMPLETION_PERCENTAGE_INDEX)
         elif menu_selection == "S":
-            pass
+            new_filename = input("File name: ")
+            write_to_file(projects, new_filename)
         elif menu_selection == "D":
             pass
         elif menu_selection == "F":
