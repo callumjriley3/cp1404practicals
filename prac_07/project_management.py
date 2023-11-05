@@ -12,10 +12,16 @@ MENU_TEXT = ("- (L)oad projects\n"
              "- (A)dd new project\n"
              "- (U)pdate project\n"
              "- (Q)uit")
-FILENAME = "projects.txt"
+DEFAULT_FILENAME = "projects.txt"
+NAME_INDEX = 0
+START_DATE_INDEX = 1
+PRIORITY_INDEX = 2
+COST_ESTIMATE_INDEX = 3
+COMPLETION_PERCENTAGE_INDEX = 4
 
 
 def main():
+    projects = process_file(DEFAULT_FILENAME, COST_ESTIMATE_INDEX, COMPLETION_PERCENTAGE_INDEX)
     print(MENU_TEXT)
     menu_selection = input(">>> ").upper()
     while menu_selection != "Q":
@@ -36,6 +42,19 @@ def main():
         print(MENU_TEXT)
         menu_selection = input(">>> ").upper()
     print("Thank you for using custom-built project management software.")
+
+
+def process_file(filename, cost_estimate_index, completion_percentage_index):
+    """Process data from file to store in a list."""
+    projects = []
+    with open(filename, "r") as in_file:
+        in_file.readline()  # ignore headings
+        for line in in_file:
+            parts = line.strip().split("\t")
+            parts[cost_estimate_index] = float(parts[cost_estimate_index])
+            parts[completion_percentage_index] = float(parts[completion_percentage_index])
+            projects.append(parts)
+    return projects
 
 
 main()
