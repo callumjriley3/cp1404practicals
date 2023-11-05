@@ -51,7 +51,7 @@ def main():
 
 def process_file(filename, name_index, start_date_index, priority_index, cost_estimate_index,
                  completion_percentage_index):
-    """Process data from file to store in a list of lists."""
+    """Process data from file to store in a list of objects."""
     projects = []
     with open(filename, "r") as in_file:
         in_file.readline()  # ignore headings
