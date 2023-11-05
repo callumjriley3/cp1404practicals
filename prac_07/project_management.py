@@ -22,6 +22,7 @@ COMPLETION_PERCENTAGE_INDEX = 4
 
 
 def main():
+    """Allow for a file to be loaded or saved to, display and filter the projects, and also add or update projects."""
     projects = process_file(DEFAULT_FILENAME, NAME_INDEX, START_DATE_INDEX, PRIORITY_INDEX, COST_ESTIMATE_INDEX,
                             COMPLETION_PERCENTAGE_INDEX)
     print(MENU_TEXT)
@@ -54,6 +55,7 @@ def main():
 
 
 def display_projects(projects):
+    """Display projects grouped based on completion percentage."""
     projects.sort()
     print("Incomplete projects:")
     for project in projects:
