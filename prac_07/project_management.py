@@ -66,7 +66,7 @@ def process_file(filename, name_index, start_date_index, priority_index, cost_es
 def write_to_file(projects, filename):
     """Save data to a file."""
     with open(filename, "w") as out_file:
-        out_file.readline()
+        print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=out_file)
         for project in projects:
             print(f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost_estimate}\t"
                   f"{project.completion_percentage}", file=out_file)
