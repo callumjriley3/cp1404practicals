@@ -30,8 +30,11 @@ def main():
     while menu_selection != "Q":
         if menu_selection == "L":
             new_filename = input("File name: ")
-            projects = process_file(new_filename, NAME_INDEX, START_DATE_INDEX, PRIORITY_INDEX, COST_ESTIMATE_INDEX,
-                                    COMPLETION_PERCENTAGE_INDEX)
+            try:
+                projects = process_file(new_filename, NAME_INDEX, START_DATE_INDEX, PRIORITY_INDEX, COST_ESTIMATE_INDEX,
+                                        COMPLETION_PERCENTAGE_INDEX)
+            except FileNotFoundError:
+                print(f"Could not find file {new_filename}")
         elif menu_selection == "S":
             new_filename = input("File name: ")
             write_to_file(projects, new_filename)
@@ -94,7 +97,15 @@ def filter_by_date(projects):
     """Filter list of projects when given a date."""
     filtered_projects = []
     user_date_string = input("Show projects that start after date (dd/mm/yy): ")
-    user_date = datetime.datetime.strptime(user_date_string, "%d/%m/%Y").date()
+    is_valid_date = False
+    while not is_valid_date:
+        try:
+            user_date = datetime.datetime.strptime(user_date_string, "%d/%m/%Y").date()
+            is_valid_date = True
+        except ValueError:
+            print("Invalid date.")
+            user_date_string = input("Show projects that start after date (dd/mm/yy): ")
+
     for project in projects:
         formatted_start_date = datetime.datetime.strptime(project.start_date, "%d/%m/%Y").date()
         if formatted_start_date >= user_date:
@@ -108,6 +119,14 @@ def get_new_project():
     """Get details for a new project."""
     name = input("Name: ")
     start_date = input("Start date (dd/mm/yy): ")
+    is_valid_date = False
+    while not is_valid_date:
+        try:
+            formatted_start_date = datetime.datetime.strptime(start_date, "%d/%m/%Y").date()
+            is_valid_date = True
+        except ValueError:
+            print("Invalid date.")
+            start_date = input("Start date (dd/mm/yy): ")
     priority = int(input("Priority: "))
     cost_estimate = float(input("Cost estimate: $"))
     completion_percentage = float(input("Percent complete: "))
