@@ -21,13 +21,15 @@ COMPLETION_PERCENTAGE_INDEX = 4
 
 
 def main():
-    projects = process_file(DEFAULT_FILENAME, COST_ESTIMATE_INDEX, COMPLETION_PERCENTAGE_INDEX)
+    projects = process_file(DEFAULT_FILENAME, NAME_INDEX, START_DATE_INDEX, PRIORITY_INDEX, COST_ESTIMATE_INDEX,
+                            COMPLETION_PERCENTAGE_INDEX)
     print(MENU_TEXT)
     menu_selection = input(">>> ").upper()
     while menu_selection != "Q":
         if menu_selection == "L":
             new_filename = input("File name: ")
-            projects = process_file(new_filename, COST_ESTIMATE_INDEX, COMPLETION_PERCENTAGE_INDEX)
+            projects = process_file(new_filename, NAME_INDEX, START_DATE_INDEX, PRIORITY_INDEX, COST_ESTIMATE_INDEX,
+                                    COMPLETION_PERCENTAGE_INDEX)
         elif menu_selection == "S":
             pass
         elif menu_selection == "D":
@@ -42,20 +44,31 @@ def main():
             print("Invalid selection.")
         print(MENU_TEXT)
         menu_selection = input(">>> ").upper()
+    write_to_file(projects, DEFAULT_FILENAME)
     print("Thank you for using custom-built project management software.")
 
 
-def process_file(filename, cost_estimate_index, completion_percentage_index):
-    """Process data from file to store in a list."""
+def process_file(filename, name_index, start_date_index, priority_index, cost_estimate_index,
+                 completion_percentage_index):
+    """Process data from file to store in a list of lists."""
     projects = []
     with open(filename, "r") as in_file:
         in_file.readline()  # ignore headings
         for line in in_file:
             parts = line.strip().split("\t")
-            parts[cost_estimate_index] = float(parts[cost_estimate_index])
-            parts[completion_percentage_index] = float(parts[completion_percentage_index])
-            projects.append(parts)
+            project = Project(parts[name_index], parts[start_date_index], parts[priority_index],
+                              parts[cost_estimate_index], parts[completion_percentage_index])
+            projects.append(project)
     return projects
+
+
+def write_to_file(projects, filename):
+    """Save data to a file."""
+    with open(filename, "w") as out_file:
+        out_file.readline()
+        for project in projects:
+            print(f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost_estimate}\t"
+                  f"{project.completion_percentage}", file=out_file)
 
 
 main()
