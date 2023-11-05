@@ -14,8 +14,11 @@ class Project:
         self.cost_estimate = cost_estimate
         self.completion_percentage = completion_percentage
 
-    def __str__(self):
+    def __repr__(self):
         """Return string according to format."""
-        return (f"{self.name}, start: {self.start_date}, priority {self.priority}, "
-                f"estimate: ${self.cost_estimate:.2f}, "
+        return (f"{self.name}, start: {self.start_date}, priority {self.priority}, estimate: ${self.cost_estimate:.2}, "
                 f"completion: {self.completion_percentage}%")
+
+    def __lt__(self, other):
+        """Sort in order of priority."""
+        return self.priority < other.priority

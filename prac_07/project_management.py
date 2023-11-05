@@ -34,7 +34,9 @@ def main():
             new_filename = input("File name: ")
             write_to_file(projects, new_filename)
         elif menu_selection == "D":
-            pass
+            projects.sort()
+            print("Incomplete projects:")
+            print(f"{(project for project in projects if project.completion_percentage < 100.0)}")
         elif menu_selection == "F":
             pass
         elif menu_selection == "A":
