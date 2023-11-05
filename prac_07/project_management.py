@@ -26,7 +26,8 @@ def main():
     menu_selection = input(">>> ").upper()
     while menu_selection != "Q":
         if menu_selection == "L":
-            pass
+            new_filename = input("File name: ")
+            projects = process_file(new_filename, COST_ESTIMATE_INDEX, COMPLETION_PERCENTAGE_INDEX)
         elif menu_selection == "S":
             pass
         elif menu_selection == "D":
