@@ -1,7 +1,7 @@
 """
 Project Management Program
 Estimated: 1 day
-Actual:
+Actual: 426 minutes
 """
 from prac_07.project import Project
 import datetime
