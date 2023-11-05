@@ -35,15 +35,7 @@ def main():
             new_filename = input("File name: ")
             write_to_file(projects, new_filename)
         elif menu_selection == "D":
-            projects.sort()
-            print("Incomplete projects:")
-            for project in projects:
-                if project.completion_percentage < 100.0:
-                    print(project)
-            print("Completed projects:")
-            for project in projects:
-                if project.completion_percentage == 100.0:
-                    print(project)
+            display_projects(projects)
         elif menu_selection == "F":
             filter_by_date(projects)
         elif menu_selection == "A":
@@ -59,6 +51,18 @@ def main():
         menu_selection = input(">>> ").upper()
     write_to_file(projects, DEFAULT_FILENAME)
     print("Thank you for using custom-built project management software.")
+
+
+def display_projects(projects):
+    projects.sort()
+    print("Incomplete projects:")
+    for project in projects:
+        if project.completion_percentage < 100.0:
+            print(project)
+    print("Completed projects:")
+    for project in projects:
+        if project.completion_percentage == 100.0:
+            print(project)
 
 
 def process_file(filename, name_index, start_date_index, priority_index, cost_estimate_index,
