@@ -14,25 +14,18 @@ MENU_TEXT = ("- (L)oad projects\n"
              "- (U)pdate project\n"
              "- (Q)uit")
 DEFAULT_FILENAME = "projects.txt"
-NAME_INDEX = 0
-START_DATE_INDEX = 1
-PRIORITY_INDEX = 2
-COST_ESTIMATE_INDEX = 3
-COMPLETION_PERCENTAGE_INDEX = 4
 
 
 def main():
     """Allow for a file to be loaded or saved to, display and filter the projects, and also add or update projects."""
-    projects = process_file(DEFAULT_FILENAME, NAME_INDEX, START_DATE_INDEX, PRIORITY_INDEX, COST_ESTIMATE_INDEX,
-                            COMPLETION_PERCENTAGE_INDEX)
+    projects = process_file(DEFAULT_FILENAME)
     print(MENU_TEXT)
     menu_selection = input(">>> ").upper()
     while menu_selection != "Q":
         if menu_selection == "L":
             new_filename = input("File name: ")
             try:
-                projects = process_file(new_filename, NAME_INDEX, START_DATE_INDEX, PRIORITY_INDEX, COST_ESTIMATE_INDEX,
-                                        COMPLETION_PERCENTAGE_INDEX)
+                projects = process_file(new_filename)
             except FileNotFoundError:
                 print(f"Could not find file {new_filename}")
         elif menu_selection == "S":
@@ -78,9 +71,7 @@ def process_file(filename, name_index, start_date_index, priority_index, cost_es
         in_file.readline()  # ignore headings
         for line in in_file:
             parts = line.strip().split("\t")
-            project = Project(parts[name_index], parts[start_date_index], int(parts[priority_index]),
-                              float(parts[cost_estimate_index]), float(parts[completion_percentage_index]))
-            projects.append(project)
+            projects.append(Project(parts[0], parts[1], int(parts[2]), float(parts[3]), float(parts[4])))
     return projects
 
 
