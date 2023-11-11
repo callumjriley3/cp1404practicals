@@ -22,9 +22,8 @@ def main():
     while name != "":
         year = int(input("Year: "))
         cost = float(input("Cost: $"))
-        guitar = Guitar(name, year, cost)
-        guitars.append(guitar)
-        print(f"{guitar} added.")
+        guitars.append(Guitar(name, year, cost))
+        print(f"{name} added.")
         name = input("Guitar name: ")
 
     with open(FILENAME, 'w') as out_file:
