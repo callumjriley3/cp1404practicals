@@ -5,9 +5,6 @@ Guitar Program from Practical 7 Exercise
 from prac_07.guitar import Guitar
 
 FILENAME = "guitars.csv"
-NAME_INDEX = 0
-YEAR_INDEX = 1
-COST_INDEX = 2
 
 
 def main():
