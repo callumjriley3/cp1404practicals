@@ -12,16 +12,11 @@ COST_INDEX = 2
 
 def main():
     """Read guitars from file, store as list of Guitar objects and display sorted."""
+    guitars = []
     with open(FILENAME, 'r') as in_file:
-        guitars = []
         for line in in_file:
             parts = line.strip().split(',')
-
-            name = parts[NAME_INDEX]
-            year = parts[YEAR_INDEX]
-            cost = parts[COST_INDEX]
-            guitar = Guitar(name, int(year), float(cost))
-            guitars.append(guitar)
+            guitars.append(Guitar(parts[0], int(parts[1]), float(parts[2])))
     guitars.sort()
     for guitar in guitars:
         print(guitar)
