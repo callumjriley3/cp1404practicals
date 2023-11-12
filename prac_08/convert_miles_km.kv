@@ -15,6 +15,7 @@ BoxLayout:
                 text: 'Down'
     Button:
         text: 'Convert miles to km'
+        on_press: app.handle_convert(input_number.text)
     Label:
         id: output_label
         font_size: 48
