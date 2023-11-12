@@ -33,6 +33,10 @@ class ConvertMilesKilometresApp(App):
         value = self.convert_to_float(text) + increment_amount
         self.root.ids.input_number.text = str(value)
 
+    def display_result(self, value):
+        """Display result of conversion when text in TextInput changes."""
+        self.root.ids.output_label.text = str(float(value) * CONVERSION_RATE)
+
     @staticmethod
     def convert_to_float(text):
         """Convert text to float, returning 0.0 in case of error."""
