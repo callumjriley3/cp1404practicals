@@ -9,8 +9,8 @@ def run_tests():
     """Run a series of tests to demonstrate the SilverServiceTaxi class's methods."""
     my_silver_service_taxi = SilverServiceTaxi("Prius 2", 100, 2)
     my_silver_service_taxi.drive(18)
-    print("Expected fare: $48.78")
-    print(f"Fare output: ${my_silver_service_taxi.price_per_km * 18 + my_silver_service_taxi.flagfall} ")
+    print("Expected fare: $48.80")
+    print(f"Fare output: ${my_silver_service_taxi.get_fare()}")
     print(my_silver_service_taxi)
 
 

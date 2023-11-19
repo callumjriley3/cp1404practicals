@@ -21,4 +21,9 @@ class SilverServiceTaxi(Taxi):
 
     def start_fare(self):
         """Begin a new fare."""
-        super().start_fare() + self.flagfall
+        super().start_fare()
+
+    def get_fare(self):
+        """Return the price for the taxi trip including flagfall."""
+        return super().get_fare() + self.flagfall
+
